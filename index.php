@@ -6,6 +6,7 @@
     <h1 class="text-center mb-4">Selamat Datang di Aplikasi Fitness</h1>
     <p class="text-center">Gunakan menu berikut untuk mengakses fitur-fitur aplikasi:</p>
 
+    <?php if (isset($_SESSION['admin'])) { ?>
     <?php
     $result = $conn->query("SELECT COUNT(*) AS jumlah FROM member WHERE status = 'Tidak Aktif'");
     $row = $result->fetch_assoc();
@@ -18,6 +19,7 @@
               </div>";
     }
     ?>
+    <?php } ?>
 
     <div class="row text-center mt-5">
         <div class="col-md-4 mb-4 dropdown">
